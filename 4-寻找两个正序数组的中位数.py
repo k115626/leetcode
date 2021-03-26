@@ -40,10 +40,19 @@
 
 # 思路2
 def findMedianSortedArrays(nums1, nums2):
+    # 保证num1数组的长长度小
     if len(nums1) > len(nums2):
-        nums2, nums1 = nums1, nums2
-    sum_len = len(nums1) + len(nums2)
-    left, right, mid = 0, len(nums1), sum_len // 2
+        nums1, nums2 = nums2, nums1
+    # 遍历长度短的数组
+    start = 0  
+    end = len(nums1)
+    mid = (len(nums1) + len(nums2)) + 1 >> 1  # 中位数是第几位数
+    nums1Mid = 0
+    nums2Mid = 0
+
+
+
+
 
 
 if __name__ == '__main__':
@@ -51,4 +60,3 @@ if __name__ == '__main__':
     nums2 = [0, 0]
     result = findMedianSortedArrays(nums1, nums2)
     print(result)
-
